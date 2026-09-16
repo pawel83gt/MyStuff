@@ -1,1 +1,1 @@
-# Razor
+This is a pet project with plans for commercial development. The source code is public for portfolio and review purposes only. All rights reserved. You may not copy, distribute, or modify the code for commercial use without permission.
