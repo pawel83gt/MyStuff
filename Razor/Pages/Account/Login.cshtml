@@ -43,9 +43,13 @@
                     Запомнить меня
                 </label>
             </div>
-
-            <button type="submit" class="btn-primary">Войти</button>
-
+            
+            <button type="submit" class="btn-primary mb-2">Войти</button>
+            <div class="h-4">
+                <div asp-validation-summary="ModelOnly" class="px-2 py-1 text-xs
+                text-red-500
+                border-b-2 border-red-400"></div>
+            </div>
         </form>
     </div>
 </div>

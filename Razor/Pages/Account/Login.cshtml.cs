@@ -51,20 +51,9 @@ public class LoginModel : PageModel
         var user = await _userManager.FindByEmailAsync(Input.Email);
         if (user == null)
         {
-            ModelState.AddModelError("Input.Email", "Пользователь с таким email не найден.");
+            ModelState.AddModelError(string.Empty, "Неверный email или пароль.");
             _logger.LogWarning(
             "Неудачная попытка входа. Email: {Email}. Причина: Пользователь не найден",
-            Input.Email);
-            return Page();
-        }
-
-        // 2.Проверяем пароль
-        var isPasswordValid = await _userManager.CheckPasswordAsync(user, Input.Password);
-        if (!isPasswordValid)
-        {
-            ModelState.AddModelError("Input.Password", "Неверный пароль.");
-            _logger.LogWarning(
-            "Неудачная попытка входа пользователя с Email: {Email}. Причина: Пароль не верный",
             Input.Email);
             return Page();
         }
@@ -73,7 +62,7 @@ public class LoginModel : PageModel
             Input.Email,
             Input.Password,
             Input.RememberMe,
-            lockoutOnFailure: false);
+            lockoutOnFailure: true);
 
         if (result.Succeeded)
         {
@@ -90,9 +79,18 @@ public class LoginModel : PageModel
             GetFailureReason(result)
         );
 
+        if (result.IsLockedOut)
+        {
+            ModelState.AddModelError(
+                string.Empty,
+                "Вход временно заблокирован. Попробуйте позже.");
+
+            return Page();
+        }
+
         ModelState.AddModelError(
             string.Empty,
-            "Неверный email или пароль.");
+             "Неверный email или пароль.");
 
         return Page();
     }

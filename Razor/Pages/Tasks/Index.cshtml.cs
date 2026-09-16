@@ -234,7 +234,8 @@ namespace Razor.Pages.Tasks
         public async Task<IActionResult> OnPostDeleteAsync(Guid id)
         {
             var todoItem = await _context.TodoItems
-         .FirstOrDefaultAsync(x => x.Id == id);
+         .FirstOrDefaultAsync(x => x.Id == id &&
+        x.UserId == CurrentUserId);
 
             if (todoItem == null)
             {
