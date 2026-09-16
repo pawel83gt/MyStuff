@@ -1,0 +1,180 @@
+﻿@model Razor.Pages.Tasks.IndexModel
+@{
+}
+@if (Model.Tasks.Any())
+{
+    <ul>
+        @foreach (var item in Model.Tasks)
+        {
+            <li class="task-card">
+
+                <div class="task-main">
+                    <a class="task-title"
+                       asp-page="./Details"
+                       asp-route-id="@item.Id">
+                        @item.Title
+                    </a>
+
+                    @if (item.IsCompleted)
+                    {
+                        <span class="task-status completed">✔ Завершена</span>
+                    }
+                    else
+                    {
+                        <span class="task-status active">! Активна</span>
+                    }
+                </div>
+
+                <div class="task-right-block">
+                    <div class="task-meta">
+                        <span>@item.TodoCategory.GetDisplayName()</span>
+                        <span>@item.CreatedAt</span>
+                    </div>
+                    <div class="task-actions">
+
+                        <form method="post" asp-page-handler="Delete">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <button type="submit"
+                                    class="task-button delete"
+                                    title="Удалить">
+                                ❌
+                            </button>
+                        </form>
+                        <form method="get" asp-page="/Tasks/Index">
+
+                            <input type="hidden"
+                                   name="category"
+                                   value="@item.TodoCategory" />
+
+                            @if (!string.IsNullOrWhiteSpace(Model.Status))
+                            {
+                                <input type="hidden"
+                                       name="status"
+                                       value="@Model.Status" />
+                            }
+                            @if (!string.IsNullOrWhiteSpace(Model.Search))
+                                {
+                                <input type="hidden"
+                                       name="search"
+                                       value="@Model.Search" />
+                                }
+
+                            <input type="hidden"
+                                   name="sort"
+                                   value="@Model.Sort" />
+                            <button type="submit"
+                                    class="task-button filter"
+                                    title="Фильтр по категории">
+                                🔍
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Список пуст</p>
+}
+
+<!-- пагинация -->
+<div class="pagination">
+    @if (Model.PageIndex > 1)
+    {
+        <a href="@Model.GetPageUrl(Model.PageIndex - 1)"
+           hx-get="@Model.GetPageHtmxUrl(Model.PageIndex - 1)"
+           hx-target="#tasks"
+           hx-push-url="true">
+
+            ← Назад
+
+        </a>
+    }
+
+    @{
+        int current = Model.PageIndex;
+        int total = Model.TotalPages;
+        int range = 2;
+    }
+
+    @if (total <= 1)
+    {
+        // одна страница — не показываем
+    }
+    else if (total <= 1 + range * 2)
+    {
+        for (int i = 1; i <= total; i++)
+        {
+            <a href="@Model.GetPageUrl(i)"
+               hx-get="@Model.GetPageHtmxUrl(i)"
+               hx-target="#tasks"
+               hx-push-url="true"
+               class="@(i == current ? "active" : "")">
+                @i
+            </a>
+        }
+    }
+    else
+    {
+        <!-- ПЕРВАЯ СТРАНИЦА -->
+
+        <a href="@Model.GetPageUrl(1)"
+           hx-get="@Model.GetPageHtmxUrl(1)"
+           hx-target="#tasks"
+           hx-push-url="true"
+           class="@(current == 1 ? "active" : "")">
+            1
+        </a>
+
+        <!-- МНОГОТОЧИЕ СЛЕВА -->
+
+        if (current - range > 2)
+        {
+
+            <span>...</span>
+        }
+
+        <!-- ЦЕНТРАЛЬНЫЕ СТРАНИЦЫ -->
+        for (int i = Math.Max(2, current - range); i <= Math.Min(total - 1, current + range); i++)
+        {
+            <a href="@Model.GetPageUrl(i)"
+               hx-get="@Model.GetPageHtmxUrl(i)"
+               hx-target="#tasks"
+               hx-push-url="true"
+               class="@(i == current ? "active" : "")">
+                @i
+            </a>
+        }
+
+        <!-- МНОГОТОЧИЕ СПРАВА -->
+        if (current + range < total - 1)
+        {
+
+            <span>...</span>
+        }
+
+        <!-- ПОСЛЕДНЯЯ СТРАНИЦА -->
+        <a href="@Model.GetPageUrl(total)"
+           hx-get="@Model.GetPageHtmxUrl(total)"
+           hx-target="#tasks"
+           hx-push-url="true"
+           class="@(current == total ? "active" : "")">
+
+            @total
+
+        </a>
+    }
+
+    <!-- ВПЕРЁД -->
+    @if (Model.PageIndex < Model.TotalPages)
+    {
+        <a href="@Model.GetPageUrl(Model.PageIndex + 1)"
+           hx-get="@Model.GetPageHtmxUrl(Model.PageIndex + 1)"
+           hx-target="#tasks"
+           hx-push-url="true">
+            Вперёд →
+        </a>
+    }
+</div>

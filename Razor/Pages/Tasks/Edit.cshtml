@@ -1,0 +1,33 @@
+﻿@page
+@model Razor.Pages.Tasks.EditModel
+
+@{
+    ViewData["Title"] = "Редактирование задачи";
+}
+
+<h1>Редактирование задачи</h1>
+
+<h2>@Model.TodoItem.Title</h2>
+
+<form method="post">
+
+    <div>
+        <label asp-for="EditTodoItem.Description">Описание:</label>
+
+        <textarea asp-for="EditTodoItem.Description" rows="10"></textarea>
+
+        <span asp-validation-for="EditTodoItem.Description" class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <button type="submit">Сохранить</button>
+
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+<a asp-page="./Details"
+   asp-route-id="@Model.TodoItem.Id">
+    Отмена
+</a>

@@ -1,0 +1,43 @@
+## ====== СЕКРЕТЫ И НАСТРОЙКИ (КРИТИЧЕСКИ ВАЖНО) ======
+# Локальные файлы конфигурации с паролями и API-ключами
+*.env
+*.env.local
+.env.*
+appsettings.Development.json
+appsettings.Local.json
+appsettings.json
+
+# Секреты пользователя Visual Studio (User Secrets)
+# (Если используются, они обычно лежат вне папки проекта, но лучше перестраховаться)
+secrets.json
+
+## ====== РЕЗУЛЬТАТЫ СБОРКИ (АРТЕФАКТЫ) ======
+# Папки с откомпилированным кодом (бинарники)
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+
+## ====== НАСТРОЙКИ ИНСТРУМЕНТОВ РАЗРАБОТКИ ======
+# Локальные кэши и настройки Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Файлы Visual Studio Code
+.vscode/
+!.vscode/extensions.json
+
+# Локальный кэш JetBrains Rider (если будете использовать)
+.idea/
+*.sln.iml
+
+## ====== ЛОГИ И ВРЕМЕННЫЕ ФАЙЛЫ ======
+*.log
+*.tmp
+*.bak

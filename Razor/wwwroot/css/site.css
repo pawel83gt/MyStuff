@@ -1,0 +1,285 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    background-color: #EDF1EE;
+    background-image: url('/images/todolist_background_pattern.svg');
+    background-repeat: repeat;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+ul, ol {
+    list-style: none; /* Убирает точки или цифры */
+    margin: 0; /* Убирает внешние отступы */
+    padding: 0; /* Убирает внутренние отступы */
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.disabled-link {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: default;
+}
+
+/* стили ссылок */
+.button-link {
+    max-width: fit-content;
+    padding: 8px 14px;
+    color: #444;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #d5d5d5;
+    border-radius: 0;
+}
+
+    .button-link:hover {
+        background: #f5f5f5;
+        border-color: #aaa;
+    }
+
+/* стили карточек задач */ 
+.task-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 18px;
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+    .task-card:hover {
+        border-color: #bcbcbc;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+    }
+
+.task-main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.task-title {
+    color: #222;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+    .task-title:hover {
+        text-decoration: underline;
+    }
+
+.task-status {
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+    .task-status.completed {
+        color: #16803c;
+    }
+
+    .task-status.active {
+        color: #c27a00;
+    }
+
+.task-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 20px;
+}
+
+    .task-actions form {
+        margin: 0;
+    }
+
+.task-button {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #d5d5d5;
+    border-radius: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+    .task-button:hover {
+        background: #f5f5f5;
+        border-color: #aaa;
+    }
+
+    .task-button.delete:hover {
+        background: #fff0f0;
+        border-color: #d88;
+    }
+
+    .task-button.filter:hover {
+        background: #f0f4ff;
+        border-color: #9aaedb;
+    }
+
+.task-right-block{
+    display: flex;
+}
+.task-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 5px;
+    color: #777;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+    .task-meta span {
+        white-space: nowrap;
+    }
+.task-meta span + span::before {
+    content: "•";
+    margin-right: 14px;
+    color: #aaa;
+}
+
+/* стили кнопок вперед назад */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 24px;
+    font-size: 14px;
+}
+
+    .pagination a {
+        padding: 8px 14px;
+        color: #444;
+        text-decoration: none;
+        background: #fff;
+        border: 1px solid #d5d5d5;
+        border-radius: 0;
+    }
+
+        .pagination a:hover {
+            background: #f5f5f5;
+            border-color: #aaa;
+        }
+
+    .pagination span {
+        color: #777;
+    }
+    .pagination a.active {
+        font-weight: bold;
+        color: #fff;
+        background-color: #cfd4d0;
+        border-color: #fff;
+        pointer-events: none; /* чтобы нельзя было кликнуть на текущую страницу */
+        cursor: default;
+    }
+
+
+    /* для валидации форм */
+.field-validation-valid {
+    display: none;
+}
+
+.field-validation-error {
+    display: inline-block;
+}
+
+/* стиль button */
+.btn-primary {
+    background: linear-gradient(135deg, #2D4B3C 0%, #3A6351 100%);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(45, 75, 60, 0.2);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+}
+
+    .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        transition: left 0.5s;
+    }
+
+    .btn-primary:hover::before {
+        left: 100%;
+    }
+
+    .btn-primary:hover {
+        box-shadow: 0 6px 20px rgba(45, 75, 60, 0.35);
+        background: linear-gradient(135deg, #3A6351 0%, #4A7A63 100%);
+    }
+
+    .btn-primary:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(45, 75, 60, 0.2);
+    }
+
+    .btn-primary:focus-visible {
+        outline: 2px solid #2D4B3C;
+        outline-offset: 2px;
+    }
+
+    /* Для disabled состояния */
+    .btn-primary:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none !important;
+    }

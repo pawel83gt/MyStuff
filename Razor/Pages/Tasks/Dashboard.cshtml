@@ -1,0 +1,16 @@
+﻿@page
+@model Razor.Pages.Tasks.DashboardModel
+@{
+	ViewData["Title"] = "Обзор задач";
+}
+<div class="flex items-center gap-4">
+    <!-- Статистика -->
+        <partial name="_StatBlock" model="Model.StatLinks" />
+    
+
+    <!-- Блок категорий  проверка Есть ли хотя бы один элемент в коллекции?-->
+    @if (Model.CategoryLinks.Any())
+    {
+        <partial name="_StatBlock" model="Model.CategoryLinks" />
+    }
+</div>

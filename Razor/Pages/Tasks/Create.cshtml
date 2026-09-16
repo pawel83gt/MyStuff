@@ -1,0 +1,38 @@
+﻿@page
+@model Razor.Pages.Tasks.CreateModel
+
+@{
+    ViewData["Title"] = "Добавить задачу";
+}
+
+<h1>Добавить задачу</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="TodoItem.TodoCategory">Выберите категорию:</label>
+        <select asp-for="TodoItem.TodoCategory"
+                asp-items="Html.GetEnumSelectList<TodoCategory>()">
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="TodoItem.Title"></label>
+        <input asp-for="TodoItem.Title" />
+        <span asp-validation-for="TodoItem.Title" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="TodoItem.Description"></label>
+        <textarea asp-for="TodoItem.Description"></textarea>
+        <span asp-validation-for="TodoItem.Description" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Добавить</button>
+</form>
+
+<!-- клиентская валидация -->
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<a asp-page="./Index">Назад к списку</a>

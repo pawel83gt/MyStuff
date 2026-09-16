@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" width="520" height="140">
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon -->
+  <g transform="translate(18 15)">
+    <!-- paper -->
+    <rect x="8" y="5" width="92" height="105" rx="10" fill="#EFF6FF"/>
+    <rect x="0" y="0" width="92" height="105" rx="10" fill="white" stroke="#D1D5DB" stroke-width="2"/>
+
+    <!-- rings -->
+    <path d="M23 12V2a5 5 0 0 1 10 0v10" fill="none" stroke="#374151" stroke-width="5" stroke-linecap="round"/>
+    <path d="M59 12V2a5 5 0 0 1 10 0v10" fill="none" stroke="#374151" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- checks -->
+    <circle cx="23" cy="37" r="9" fill="url(#blue)"/>
+    <path d="M18 37l4 4 7-8" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <circle cx="23" cy="63" r="9" fill="url(#blue)"/>
+    <path d="M18 63l4 4 7-8" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <circle cx="23" cy="89" r="9" fill="none" stroke="#9CA3AF" stroke-width="3"/>
+
+    <!-- text lines -->
+    <rect x="40" y="32" width="38" height="5" rx="2.5" fill="#9CA3AF"/>
+    <rect x="40" y="42" width="28" height="4" rx="2" fill="#D1D5DB"/>
+    <rect x="40" y="58" width="38" height="5" rx="2.5" fill="#9CA3AF"/>
+    <rect x="40" y="68" width="28" height="4" rx="2" fill="#D1D5DB"/>
+    <rect x="40" y="84" width="38" height="5" rx="2.5" fill="#9CA3AF"/>
+    <rect x="40" y="94" width="28" height="4" rx="2" fill="#D1D5DB"/>
+  </g>
+
+  <!-- Brand name -->
+  <text x="135" y="86"
+        font-family="Inter, Segoe UI, Arial, sans-serif"
+        font-size="48"
+        font-weight="700"
+        letter-spacing="-1.5">
+    <tspan fill="#111827">Мои</tspan>
+    <tspan fill="#2563EB"> дела</tspan>
+  </text>
+</svg>

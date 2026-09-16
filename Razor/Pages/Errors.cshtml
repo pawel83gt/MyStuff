@@ -1,0 +1,15 @@
+﻿@page
+@model Razor.Pages._404Model
+@{
+    ViewData["Title"] = "Ошибка";
+}
+
+<div class="container">
+    <h1 class="code">@Model.StatusCode</h1>
+    <p class="message">@Model.Message</p>
+    @if (!string.IsNullOrEmpty(Model.Path))
+    {
+        <p class="path">Путь: @Model.Path</p>
+    }
+    <a href="/" class="btn">На главную</a>
+</div>

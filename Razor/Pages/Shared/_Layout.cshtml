@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Мои дела</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Razor.styles.css" asp-append-version="true" /> 
+    <link rel="stylesheet" href="~/css/tailwind.generated.css" asp-append-version="true" /> 
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-white shadow-md shrink-0">
+        <div class="container mx-auto flex items-center justify-between px-6 py-3">
+
+            <!-- Левый блок: логотип -->
+            <div class="flex items-center">
+                <a asp-area="" asp-page="/Index" class="flex items-center">
+                    <img src="/images/moi_dela_logo.svg" alt="Логотип" class="h-12 w-auto" />
+                </a>
+                
+                <nav class="flex items-center gap-6">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <a class="text-gray-600 hover:text-gray-900" asp-area="" asp-page="/Tasks/Dashboard">Обзор</a>
+                        <a class="text-gray-600 hover:text-gray-900" asp-area="" asp-page="/Tasks/Index">Список дел</a>
+                    }
+                </nav>
+            </div>
+
+            <!-- Правый блок: меню -->
+            <nav class="flex items-center gap-6">
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <form method="post"
+                          asp-page="/Account/Logout">
+
+                        <button type="submit" class="button-link">
+                            Выйти
+                        </button>
+
+                    </form>
+                }
+                else
+                {
+                    <a class="text-gray-600 hover:text-gray-900 button-link"
+                       asp-page="/Account/Login">
+                        Войти
+                    </a>
+                    <a class="text-gray-600 hover:text-gray-900 button-link"
+                       asp-page="/Account/Register">
+                        Регистрация
+                    </a>
+                }
+            </nav>
+        </div>
+    </header>
+
+<!-- ===== Main ===== -->
+    <main role="main" class="flex-1 flex flex-col container mx-auto px-6 py-3">
+        @RenderBody()
+    </main>
+
+<footer class="shrink-0 border-t border-[#D5DAD4] bg-[#EDF1EE]">
+    <div class="container mx-auto px-6 py-4 text-center text-gray-500 text-sm">
+        © 2026 - Мои дела - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
+</footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.6"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿@model List<StatLink>
+
+@if (Model.Any(x => x.Type == StatLinkType.Category))
+{
+    <div class="flex gap-3">
+        @foreach (var link in Model)
+        {
+            <div class="flex items-center bg-white px-4 py-2">
+                <a title="@link.Label" asp-page="@link.Page"
+                   asp-route-category="@link.RouteCategory"
+                   class="flex items-center gap-2 text-blue-600 hover:text-blue-900">
+                    <partial name="_CategoryIcon" model="link.Icon" />
+
+                    <span class="text-sm">
+                        @link.Count
+                    </span>
+
+                </a>
+            </div>
+            
+        }
+    </div>
+}
+else
+{
+    <div class="flex flex-col bg-white px-4 py-2">
+        @foreach (var link in Model)
+        {
+            <div class="flex justify-between gap-4">
+
+                <span class="text-sm text-gray-600">@link.Label:</span>
+
+                <a asp-page="@link.Page"
+                   asp-route-status="@link.RouteStatus"
+                   asp-route-category="@link.RouteCategory"
+                   class="font-medium text-blue-600 hover:text-blue-900">
+                    @link.Count
+                </a>
+
+            </div>
+        }
+    </div>
+}

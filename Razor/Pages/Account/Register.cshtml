@@ -1,0 +1,64 @@
+﻿@page
+@model Razor.Pages.Account.RegisterModel
+
+@{
+    ViewData["Title"] = "Регистрация";
+}
+
+<div class="flex-1 flex items-center justify-center">
+    <div class="w-full max-w-sm shadow-[0_8px_6px_-6px_rgba(0,0,0,0.2)] bg-white p-4">
+        <h1 class="mb-5">Регистрация</h1>
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <form method="post">
+             
+            <div class="mb-5">
+                <label asp-for="Input.Email" class="mb-1 block text-sm font-medium text-gray-700"></label>
+                <input type="email" asp-for="Input.Email" autocomplete="email" class="w-full border border-gray-300 px-3 py-2 text-sm
+                outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-100" />
+                <div class="h-4 pt-1">
+                    <span asp-validation-for="Input.Email" class="px-2 py-1 text-xs
+                    text-red-500
+                    bg-white
+                    border-l-2 border-red-400
+                    shadow-[0_3px_8px_rgba(0,0,0,0.12)]"></span>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <label asp-for="Input.Password" class="mb-1 block text-sm font-medium text-gray-700"></label>
+                <input asp-for="Input.Password" autocomplete="new-password" class="w-full border border-gray-300 px-3 py-2 text-sm
+                outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-100" />
+                <div class="h-4 pt-1">
+                    <span asp-validation-for="Input.Password" class="px-2 py-1 text-xs
+                    text-red-500
+                    bg-white
+                    border-l-2 border-red-400
+                    shadow-[0_3px_8px_rgba(0,0,0,0.12)]"></span>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <label asp-for="Input.ConfirmPassword" class="mb-1 block text-sm font-medium text-gray-700"></label>
+                <input asp-for="Input.ConfirmPassword" autocomplete="new-password" class="w-full border border-gray-300 px-3 py-2 text-sm
+                outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-100" />
+                <div class="h-4 pt-1">
+                    <span asp-validation-for="Input.ConfirmPassword" class="px-2 py-1 text-xs
+                    text-red-500
+                    bg-white
+                    border-l-2 border-red-400
+                    shadow-[0_3px_8px_rgba(0,0,0,0.12)]"></span>
+                </div>
+                
+            </div>
+
+            <button type="submit" class="btn-primary">Зарегистрироваться</button>
+
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

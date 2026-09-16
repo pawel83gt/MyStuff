@@ -1,0 +1,57 @@
+﻿@page
+@model Razor.Pages.Tasks.DetailsModel
+
+@{
+    ViewData["Title"] = Model.TodoItem.Title;
+}
+
+<h1>@Model.TodoItem.Title</h1>
+
+<div>
+    <strong>Категория:</strong>
+    @Model.TodoItem.TodoCategory
+</div>
+
+<div>
+    <strong>Описание:</strong>
+    @Model.TodoItem.Description
+</div>
+
+<div>
+    <strong>Статус:</strong>
+
+    @if (Model.TodoItem.IsCompleted)
+    {
+        <span>Выполнено</span>
+    }
+    else
+    {
+        <span>Не выполнено</span>
+    }
+</div>
+<form method="post" asp-page-handler="ToggleComplete">
+    <input type="hidden" name="id" value="@Model.TodoItem.Id" />
+
+    @if (Model.TodoItem.IsCompleted)
+    {
+        <button type="submit">Вернуть в работу</button>
+    }
+    else
+    {
+        <button type="submit">Выполнить</button>
+    }
+</form>
+
+<div>
+    <strong>Создано:</strong>
+    @Model.TodoItem.CreatedAt
+</div>
+
+<br />
+<a asp-page="./Edit"
+   asp-route-id="@Model.TodoItem.Id"
+   class="@(Model.TodoItem.IsCompleted ? "disabled-link" : "")">
+    Редактировать
+</a>
+
+<a asp-page="./Index">Назад к списку</a>

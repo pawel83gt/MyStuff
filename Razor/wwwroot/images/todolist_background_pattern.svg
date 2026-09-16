@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+<defs>
+<g id="work" fill="none" stroke="#C9D4CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="-14" y="-9" width="28" height="20" rx="2"/><path d="M-7-9v-4h14v4M-14 0h28M-4 0v4h8V0"/></g>
+<g id="laptop" fill="none" stroke="#C9D4CA" stroke-width="2"><rect x="-14" y="-11" width="28" height="18" rx="2"/><path d="M-18 11h36l-3 4h-30z"/></g>
+<g id="book" fill="none" stroke="#C9D4CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M-14-13h9a5 5 0 0 1 5 5v20a5 5 0 0 0-5-3h-9zM14-13H5a5 5 0 0 0-5 5v20a5 5 0 0 1 5-3h9zM0-8v20"/></g>
+<g id="cap" fill="none" stroke="#C9D4CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M-17-3L0-11 17-3 0 5zM-10 2v7c5 4 15 4 20 0V2M17-3v10"/></g>
+<g id="game" fill="none" stroke="#C9D4CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M-15 4a8 8 0 0 1 7-10h16a8 8 0 0 1 7 10l-2 8a4 4 0 0 1-7 1l-5-5h-2l-5 5a4 4 0 0 1-7-1z"/><path d="M-8-1v8M-12 3h8M7 0h.1M11 4h.1"/></g>
+<g id="music" fill="none" stroke="#C9D4CA" stroke-width="2" stroke-linecap="round"><path d="M5-14v20M5-14l10-3v17"/><ellipse cx="0" cy="8" rx="5" ry="3"/><ellipse cx="10" cy="5" rx="5" ry="3"/></g>
+<g id="house" fill="none" stroke="#C9D4CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M-16-1L0-15 16-1v16h-32zM-5 15V5h10v10"/></g>
+<g id="mug" fill="none" stroke="#C9D4CA" stroke-width="2" stroke-linecap="round"><path d="M-12-9h18v11a8 8 0 0 1-16 0zM6-6h4a5 5 0 0 1 0 9H7"/></g>
+<g id="plant" fill="none" stroke="#C9D4CA" stroke-width="2" stroke-linecap="round"><path d="M-7 15h14l-2-9H-5zM0 6V-8M0-1c-8 0-10-6-10-9 6 0 10 3 10 9M0-3c8 0 10-6 10-9-6 0-10 3-10 9"/></g>
+<g id="lamp" fill="none" stroke="#C9D4CA" stroke-width="2" stroke-linecap="round"><path d="M-10-12h20l-4 13H-6zM0 1v10M-6 15h12"/></g>
+<g id="ball" fill="none" stroke="#C9D4CA" stroke-width="2" stroke-linecap="round"><circle r="14"/><path d="M-7-12c3 3 5 7 4 12M7-12c-3 3-5 7-4 12M-12 7c5-1 10 1 14 5"/></g>
+<g id="bike" fill="none" stroke="#C9D4CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="-10" cy="8" r="7"/><circle cx="11" cy="8" r="7"/><path d="M-10 8l7-13h7l7 13M-3-5l5 13M4-5l-7 13"/></g>
+</defs>
+<g opacity=".9">
+<use href="#house" transform="translate(45 55) rotate(-12) scale(.9)"/>
+<use href="#laptop" transform="translate(160 42) rotate(8) scale(.8)"/>
+<use href="#ball" transform="translate(285 55) rotate(20) scale(.85)"/>
+<use href="#book" transform="translate(410 45) rotate(-9) scale(.8)"/>
+<use href="#music" transform="translate(545 60) rotate(12) scale(.8)"/>
+<use href="#plant" transform="translate(100 155) rotate(13) scale(.9)"/>
+<use href="#work" transform="translate(230 145) rotate(-14) scale(.75)"/>
+<use href="#game" transform="translate(355 155) rotate(9) scale(.78)"/>
+<use href="#bike" transform="translate(505 148) rotate(-8) scale(.72)"/>
+<use href="#laptop" transform="translate(40 250) rotate(-25) scale(.65)"/>
+<use href="#cap" transform="translate(145 238) rotate(8) scale(.75)"/>
+<use href="#mug" transform="translate(285 250) rotate(-7) scale(.8)"/>
+<use href="#game" transform="translate(430 245) rotate(15) scale(.78)"/>
+<use href="#ball" transform="translate(590 255) rotate(-12) scale(.7)"/>
+<use href="#book" transform="translate(84 345) rotate(11) scale(.78)"/>
+<use href="#house" transform="translate(205 350) rotate(-10) scale(.8)"/>
+<use href="#bike" transform="translate(335 350) rotate(17) scale(.7)"/>
+<use href="#lamp" transform="translate(485 340) rotate(-13) scale(.72)"/>
+<use href="#ball" transform="translate(35 455) rotate(8) scale(.72)"/>
+<use href="#cap" transform="translate(150 445) rotate(-8) scale(.72)"/>
+<use href="#plant" transform="translate(285 470) rotate(14) scale(.72)"/>
+<use href="#music" transform="translate(405 455) rotate(-17) scale(.72)"/>
+<use href="#laptop" transform="translate(545 465) rotate(10) scale(.72)"/>
+<use href="#lamp" transform="translate(78 555) rotate(-10) scale(.78)"/>
+<use href="#ball" transform="translate(205 565) rotate(-18) scale(.7)"/>
+<use href="#work" transform="translate(335 550) rotate(18) scale(.72)"/>
+<use href="#game" transform="translate(470 560) rotate(-8) scale(.72)"/>
+<use href="#bike" transform="translate(590 565) rotate(14) scale(.62)"/>
+</g>
+</svg>
